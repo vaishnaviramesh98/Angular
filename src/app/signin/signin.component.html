@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>sigin-template driven forms</h1>
+    <form #signInForm="ngForm" (ngSubmit)="loginUser(signInForm)">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="emailField" ngModel email required #emailField="ngModel">
+          <small  class="form-text text-muted" *ngIf="emailField.touched && !emailField.valid">Enter email address</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="passwordFeild" ngModel required #passwordField="ngModel">
+          <small  class="form-text text-muted" *ngIf="passwordField.touched && !passwordField.valid">Enter password</small>
+        </div>
+        
+        <div class="form-check">
+            <input type="radio" class="form-input"  value="male" id="exampleCheck1" name="radioFeild" ngModel>
+            <label class="form-check-label" for="exampleCheck1">male</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-input" value="female"  id="exampleCheck1" name="radioFeild" ngModel>
+            <label class="form-check-label" for="exampleCheck1">female</label>
+          </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-input" id="exampleCheck1" name="termsFeild" ngModel>
+          <label class="form-check-label" for="exampleCheck1">Agree to terms</label>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Notes</label>
+          <input type="textarea" class="form-control" id="exampleInputPassword1" placeholder="notes" name="textFeild" ngModel>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="signInForm.invalid">Submit</button>
+      </form>
+</div>

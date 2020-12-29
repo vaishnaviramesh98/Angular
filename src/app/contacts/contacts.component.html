@@ -1,0 +1,22 @@
+<p>contacts works!</p>
+<h1>list of contacts</h1>
+<ul>
+    <li *ngFor="let contact of contactList">
+        {{ contact.firstName }}
+    </li>
+</ul>
+<h3>create new contact</h3>
+<div class="container">
+<form #addNewContactForm="ngForm" (ngSubmit)="addNewContact(addNewContactForm)">
+    <input type="text" class="form-control" name="id" required ngModel>
+    <input type="text" class="form-control" name="firstName" required ngModel>
+    <input type="text" class="form-control" name="lastName" required ngModel>
+   
+    <button class="form-control" [disabled]="!addNewContactForm.valid">Add new contact</button>
+  </form>
+</div>
+  <div *ngIf="msgTrue">contact created sucessfully</div>
+  <button (click)="updateContact(2);">update</button>
+  <button (click)="deleteContact(2);">delete</button>
+  <button (click)="getContact();">get contact</button>
+ 

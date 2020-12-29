@@ -40,6 +40,22 @@
             ]
           },
           "configurations": {
+            "developer": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.developer.ts"
+                }
+              ]
+            },
+            "qa": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.qa.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -75,6 +91,12 @@
             "browserTarget": "oneConversionn:build"
           },
           "configurations": {
+            "developer": {
+              "browserTarget": "oneConversionn:build:developer"
+            },
+            "qa": {
+              "browserTarget": "oneConversionn:build:qa"
+            },
             "production": {
               "browserTarget": "oneConversionn:build:production"
             }
@@ -93,6 +115,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
+        
             "assets": [
               "src/favicon.ico",
               "src/assets"
